@@ -11,13 +11,11 @@ const steps = [
     `,
     onLoad: () => {
       const noBtn = document.getElementById("noBtn");
-
       const move = () => {
         noBtn.style.position = "relative";
         noBtn.style.left = Math.random() * 120 - 60 + "px";
         noBtn.style.top = Math.random() * 60 - 30 + "px";
       };
-
       noBtn.addEventListener("mouseover", move);
       noBtn.addEventListener("touchstart", move);
     }
@@ -26,32 +24,51 @@ const steps = [
     html: `
       <h1>Are you sure?</h1>
       <p>Like… actually sure?</p>
-      <button onclick="next()">Yes, I'm sure</button>
-      <button onclick="softContinue()">I need a second</button>
+      <button onclick="next()">Yes, I am</button>
+      <button onclick="softContinue()">I need a moment</button>
     `
   },
   {
     html: `
-      <p>I should tell you something.</p>
-      <h1>I overthink. A lot.</h1>
+      <p>I should be honest with you.</p>
+      <h1>I overthink a lot.</h1>
       <button onclick="next()">Okay</button>
     `
   },
   {
     html: `
-      <p>I replay conversations.</p>
+      <p>
+        I overthink because I care.<br>
+        Because you matter to me more than I know how to say.
+      </p>
       <button onclick="next()">Still here</button>
     `
   },
   {
     html: `
-      <p>I worry I said the wrong thing.</p>
+      <p>
+        I replay conversations,<br>
+        not because I doubt you,<br>
+        but because I want to be better for you.
+      </p>
       <button onclick="next()">Still here</button>
     `
   },
   {
     html: `
-      <p>I care deeply, even when it scares me.</p>
+      <p>
+        Sometimes I get quiet.<br>
+        It’s not distance — it’s me trying not to mess up something important.
+      </p>
+      <button onclick="next()">Still here</button>
+    `
+  },
+  {
+    html: `
+      <p>
+        I feel deeply.<br>
+        And yeah, that scares me sometimes.
+      </p>
       <button onclick="next()">Still here</button>
     `
   },
@@ -66,7 +83,7 @@ const steps = [
     html: `
       <p>
         [Write your personal message here.<br><br>
-        Keep it honest. Let it breathe.]
+        This is where you talk about her, not you.]
       </p>
       <div class="footer">Built for one player only.</div>
     `
@@ -95,10 +112,10 @@ function next() {
 
 function softContinue() {
   content.innerHTML = `
-    <p>Take your time.</p>
-    <p>I’ll still be here.</p>
+    <p>That’s okay.</p>
+    <p>I’ll still be right here.</p>
   `;
-  setTimeout(next, 1600);
+  setTimeout(next, 1700);
 }
 
 render();
