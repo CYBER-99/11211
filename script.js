@@ -6,6 +6,10 @@ const steps = [
   {
     html: `
       <h1>Will you be my Valentine?</h1>
+      <p>
+        I know this might feel like a small question…<br>
+        especially when we’ve already been together for a year.
+      </p>
       <button onclick="next()">Yes</button>
       <button id="noBtn">No</button>
     `,
@@ -14,7 +18,6 @@ const steps = [
       const move = () => {
         noBtn.style.position = "relative";
         noBtn.style.left = Math.random() * 120 - 60 + "px";
-        noBtn.style.top = Math.random() * 60 - 30 + "px";
       };
       noBtn.addEventListener("mouseover", move);
       noBtn.addEventListener("touchstart", move);
@@ -22,24 +25,27 @@ const steps = [
   },
   {
     html: `
-      <h1>Are you sure?</h1>
-      <p>Like… actually sure?</p>
-      <button onclick="next()">Yes, I am</button>
-      <button onclick="softContinue()">I need a moment</button>
-    `
-  },
-  {
-    html: `
-      <p>I should be honest with you.</p>
-      <h1>I overthink a lot.</h1>
-      <button onclick="next()">Okay</button>
+      <p>
+        Do you remember when I asked you once,<br>
+        <b>“Do you really deserve this new me?”</b>
+      </p>
+      <button onclick="next()">I remember</button>
     `
   },
   {
     html: `
       <p>
-        I overthink because I care.<br>
-        Because you matter to me more than I know how to say.
+        I said I didn’t have an answer back then.<br>
+        But the truth is… I did.
+      </p>
+      <button onclick="next()">Tell me</button>
+    `
+  },
+  {
+    html: `
+      <p>
+        You deserved it.<br>
+        And honestly, you deserve even more.
       </p>
       <button onclick="next()">Still here</button>
     `
@@ -47,9 +53,17 @@ const steps = [
   {
     html: `
       <p>
-        I replay conversations,<br>
-        not because I doubt you,<br>
-        but because I want to be better for you.
+        I overthink a lot because I care.<br>
+        I get rude sometimes, I suspect sometimes…
+      </p>
+      <button onclick="next()">I know</button>
+    `
+  },
+  {
+    html: `
+      <p>
+        That’s because you’re the only one<br>
+        who actually cares when I show my feelings.
       </p>
       <button onclick="next()">Still here</button>
     `
@@ -57,8 +71,17 @@ const steps = [
   {
     html: `
       <p>
-        Sometimes I get quiet.<br>
-        It’s not distance — it’s me trying not to mess up something important.
+        The world ignored my existence more times than I can count.<br>
+        And slowly… I stopped calling it my world.
+      </p>
+      <button onclick="next()">And?</button>
+    `
+  },
+  {
+    html: `
+      <p>
+        I think you became my world.<br>
+        Because you cared.
       </p>
       <button onclick="next()">Still here</button>
     `
@@ -66,26 +89,45 @@ const steps = [
   {
     html: `
       <p>
-        I feel deeply.<br>
-        And yeah, that scares me sometimes.
+        People don’t believe online relationships last.<br>
+        Even I wasn’t sure at first.
       </p>
-      <button onclick="next()">Still here</button>
+      <button onclick="next()">But now?</button>
     `
   },
   {
     html: `
-      <h1>Knowing all that…</h1>
-      <p>Do you still choose me?</p>
+      <p>
+        Love isn’t about being physically there.<br>
+        It’s about choosing each other every day.
+      </p>
+      <button onclick="next()">I agree</button>
+    `
+  },
+  {
+    html: `
+      <p>
+        You chose me when I really needed someone.<br>
+        And I’ll never forget that.
+      </p>
+      <button onclick="next()">…</button>
+    `
+  },
+  {
+    html: `
+      <h1>So I’ll ask again.</h1>
+      <p>Will you be my Valentine?</p>
       <button onclick="next()">Yes</button>
     `
   },
   {
     html: `
       <p>
-        [Write your personal message here.<br><br>
-        This is where you talk about her, not you.]
+        Till our last breath.<br><br>
+        Thank you for choosing me.<br>
+        Always.
       </p>
-      <div class="footer">Built for one player only.</div>
+      <div class="footer">Built for one heart only.</div>
     `
   }
 ];
@@ -108,14 +150,6 @@ function render() {
 function next() {
   step++;
   render();
-}
-
-function softContinue() {
-  content.innerHTML = `
-    <p>That’s okay.</p>
-    <p>I’ll still be right here.</p>
-  `;
-  setTimeout(next, 1700);
 }
 
 render();
